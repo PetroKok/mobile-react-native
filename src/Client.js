@@ -9,7 +9,7 @@ class Client extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: null,
+            name: "Guest",
             data: []
         }
     }
@@ -18,7 +18,7 @@ class Client extends Component {
         axios.post('https://mplayer2.herokuapp.com/load-music')
             .then(res => {
                 this.setState({data: res.data}, () => {
-                    console.log(this.state.data);
+                    // console.log(this.state.data);
                 });
             })
             .catch(err => console.log(err));
